@@ -2,36 +2,38 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>My Learning</title>
   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Learning</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     
   </style>
 </head>
 <body>
-  <header>
-    <h1 class="headder">My Learning</h1>
-    <!-- Toggle button for mobile navigation -->
-    <div class="toggle-btn" onclick="toggleNavigation()">☰</div>
-    <nav id="navigation">
-      <ul>
+  <head>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <span>My Learning</span>
+      </div>
+      <button class="toggle-button">&#9776;</button>
+      <ul class="navbar-items" id="navbarItems">
         <li><a href="index.html">Home</a></li>
-        <li><a href="html.html">HTML</a></li>
-        <li><a href="css.html">CSS</a></li>
-        <li><a href="javascript.html">JavaScript</a></li>
+        <li><a href="./pages/html.html">HTML</a></li>
+        <li><a href="./pages/css.html">CSS</a></li>
+        <li><a href="./pages/javascript.html">JavaScript</a></li>
       </ul>
     </nav>
-  </header>
-
+  </head>
   <main id="main-content">
     <h2>Welcome to My Learning Website</h2>
     <p>Choose a topic from the navigation menu to explore.</p>
   </main>
 
-  <footer>
-    <p>&copy; 2023 My Learning By Noor. All rights reserved.</p>
-  </footer>
+<footer>
+  <p>&copy; 2023 My Learning By Noor. All rights reserved.</p>
+ </footer>
 <script src="main.js"></script>
 </body>
 </html>

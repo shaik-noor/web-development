@@ -1,11 +1,33 @@
-// Function to toggle the mobile navigation
-function toggleNavigation() {
-  var navigation = document.getElementById("navigation");
-  navigation.classList.toggle("show");
+// JavaScript
+const toggleButton = document.querySelector('.toggle-button');
+const navbarItems = document.querySelector('.navbar-items');
+
+// Function to toggle the 'active' class for mobile view
+function toggleMobileNav() {
+  navbarItems.classList.toggle('active');
 }
 
-// fetch function start
+// Event listener for the toggle button
+toggleButton.addEventListener('click', toggleMobileNav);
 
+// Function to handle resizing and switching to desktop view
+function handleResize() {
+  const windowWidth = window.innerWidth;
+  const desktopViewThreshold = 768;
+
+  if (windowWidth >= desktopViewThreshold) {
+    // If the window width is larger than or equal to 768px (desktop view)
+    navbarItems.classList.remove('active');
+  }
+}
+
+// Event listener for window resize
+window.addEventListener('resize', handleResize);
+
+// Execute handleResize initially to set the appropriate view on page load
+handleResize();
+
+// fetch function start
 // Function to fetch and render the content from a given URL
 function fetchContent(url) {
   // Check if the URL is 'index.html', if yes, redirect to it
@@ -33,7 +55,7 @@ function fetchContent(url) {
 }
 
 // Event listener for navigation links
-const navigationLinks = document.querySelectorAll('#navigation a');
+const navigationLinks = document.querySelectorAll('#navbarItems a');
 navigationLinks.forEach(function(link) {
   // Add a click event listener to each navigation link
   link.addEventListener('click', function(event) {

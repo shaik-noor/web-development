@@ -1,119 +1,68 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
-body{ font-family:"Poppins",sans-serif;}
-/* Basic styling for header and navigation */
-header {
+
+/* Reset default styles and set font-family */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Navbar styles */
+.navbar {
   background-color: #333;
   color: #fff;
+  display: flex;
+  align-items: center;
   padding: 10px;
-  position: relative;
 }
 
-#navigation {
-  display: flex; /* Display the navigation links horizontally on desktop */
-
+.navbar-brand {
+  flex: 1;
+  padding: 1px;
 }
-.toggle-btn{
+
+.navbar-items {
   display: none;
-}
-
-#navigation ul {
   list-style: none;
+  margin: 0;
   padding: 0;
-  margin: 0;
-  display: flex; /* Display the navigation links horizontally on mobile */
 }
 
-#navigation li {
-  margin-right: 10px;
+.navbar-items.active {
+  display: flex; /* Display the navigation menu when 'active' class is applied */
+  flex-direction: column;
 }
 
-#navigation a {
+.navbar-items li {
+  margin: 10px; /* Changed the left margin for both desktop and mobile views */
+}
+
+.navbar-items li a {
   color: #fff;
   text-decoration: none;
 }
 
-/* Mobile Navigation */
-@media (max-width: 768px) {
-  #navigation {
-    flex-direction: column; /* Display the navigation links vertically on mobile */
-    display: none; /* Hide the navigation by default on mobile */
-  }
-
-  #navigation.show {
-    display: flex; /* Show the navigation when the "show" class is added */
-  }
-
-  #navigation li {
-    margin-bottom: 5px; /* Add spacing between list items on mobile */
-  }
-
-  .toggle-btn {
-    display: block;
-    position: absolute; /* Add absolute positioning to the toggle button */
-    top: 10px; /* Adjust top position to vertically center the button */
-    right: 10px; /* Align the button to the right side */
-    font-size: 2rem;
-  }
-}
-
-header {
-  background-color: #333;
-  padding: 20px;
-}
-
-.headder {
+.toggle-button {
+  display: block; /* Show the toggle button for both desktop and mobile views */
+  font-size: 24px;
+  background: transparent;
+  border: none;
   color: #fff;
-  margin: 0;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
+  cursor: pointer;
 }
 
-
-.sub-heading {
-  color: #007bff;
-  margin-top: 30px;
+#main-content {
+  padding: 15px;
 }
 
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
+/* Media query for desktop view */
+@media screen and (min-width: 768px) {
+  .navbar-items {
+    display: flex;
+    justify-content: flex-end;
+  }
 
-li {
-  margin-bottom: 5px;
-}
-
-a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin-right: 10px;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-main {
-  padding: 20px;
-}
-
-footer {
-  background-color: #f2f2f2;
-  padding: 20px;
-  text-align: center;
-  font-size: 14px;
+  .toggle-button {
+    display: none; /* Hide the toggle button for larger screens */
+  }
 }
